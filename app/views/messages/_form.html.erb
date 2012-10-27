@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :sender %><br />
     <%= f.text_field :sender %>
-  </div>
+  </div> -->
   <div class="field">
-    <%= f.label :recipient %><br />
+    <%= f.label :recipient, "Recipient(s)" %><br />
     <%= f.text_area :recipient %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body, "Message Body" %><br />
     <%= f.text_area :body %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :time %><br />
     <%= f.datetime_select :time %>
-  </div>
+  </div> -->
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -45,8 +45,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.sender = "cmu3071" #THIS NEEDS TO BE CHANGED WHEN OAF RECEIVES THEIR OWN SHORTCODE
-    time = Time.now.strftime("%I:%M%p %b %d, %Y")
-    @message.time = time
+    @message.time = Time.now
     
     body = @message.body
     phones = Message.split_numbers(@message.recipient)
@@ -75,6 +74,17 @@ class MessagesController < ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def receive
+    @message = Message.new(params[:message])
+    @message.sender = params[:number]
+    @message.recipient = params[:endpoint]
+    @message.body = params[:text]
+    @message.time = Time.now
+    @message.save
+    
+    
   end
 
   # PUT /messages/1
