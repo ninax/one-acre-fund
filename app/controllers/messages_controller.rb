@@ -1,3 +1,6 @@
+require 'uri'
+require 'net/http'
+
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
@@ -41,7 +44,28 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
+    @message.sender = "cmu3071" #THIS NEEDS TO BE CHANGED WHEN OAF RECEIVES THEIR OWN SHORTCODE
+    time = Time.now.strftime("%I:%M%p %b %d, %Y")
+    @message.time = time
+    
+    body = @message.body
+    phones = Message.split_numbers(@message.recipient)
 
+    phones.each do |ph|
+      phone = Message.reformat_phone(ph)
+      puts "PHONE: #{phone}"
+      url = Message.text_to(phone,body)
+      puts "URL: #{url}"
+      newUrl = URI.parse(URI.encode(url.strip))
+      http = Net::HTTP.new(newUrl.host,443)
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      @data = http.get(newUrl.request_uri)
+      puts "STATUS: #{@data.code}"
+      puts "BODY: #{@data.body}"
+      puts "RESPONSE: #{@data}"
+    end
+       
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
