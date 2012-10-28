@@ -1,25 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Message -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => model_class.model_name.human %></h2>
+</div>
 
-<p>
-  <b>Sender:</b>
-  <%= @message.sender %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:sender) %>:</strong></dt>
+  <dd><%= @message.sender %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:recipient) %>:</strong></dt>
+  <dd><%= @message.recipient %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
+  <dd><%= @message.body %></dd>
+  <dt><strong>Date:</strong></dt>
+  <dd><%= Message.reformat_date(@message.time) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
+  <dd><%= Message.reformat_time(@message.time) %></dd>
+</dl>
 
-<p>
-  <b>Recipient:</b>
-  <%= @message.recipient %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @message.body %>
-</p>
-
-<p>
-  <b>Time:</b>
-  <%= @message.time %>
-</p>
-
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              messages_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_message_path(@message), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              message_path(@message),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

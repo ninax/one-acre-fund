@@ -29,8 +29,13 @@ class Message < ActiveRecord::Base
     count
   end
   
-  def self.reformat_time(time)
-    time.strftime("%d/%m/%y")
+  def self.reformat_date(timestamp)
+    date = timestamp.strftime("%b %e, %Y")
+    date
+  end
+  
+  def self.reformat_time(timestamp)
+    time = timestamp.strftime("%I:%M %p")
     time
   end
 end

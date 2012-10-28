@@ -1,33 +1,35 @@
-<%= form_for(@message) do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-      <% @message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
+  <!-- <div class="control-group">
+    <%= f.label :sender, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sender, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div> -->
+  <div class="control-group">
+    <%= f.label :recipient, "Recipient(s)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :recipient, :style => "width:420px; height:250px", :placeholder => "Copy and paste phone numbers here", :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :body, "Body", :class => 'control-label' %>
+    <div class="controls">
+	<div id="bodyTextArea">
+      <%= f.text_area :body, :style => "width:420px; height:100px;", :placeholder => "Type your message here", :class => 'text_area' %>
+	  <p class="note">(140 characters maximum)</p>
+	</div>
+    </div>
+  </div>
+  <!-- <div class="control-group">
+    <%= f.label :time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :time, :class => 'datetime_select' %>
+    </div>
+  </div> -->
 
-  <!-- <div class="field">
-    <%= f.label :sender %><br />
-    <%= f.text_field :sender %>
-  </div> -->
-  <div class="field">
-    <%= f.label :recipient, "Recipient(s)" %><br />
-    <%= f.text_area :recipient %>
-  </div>
-  <div class="field">
-    <%= f.label :body, "Message Body" %><br />
-    <%= f.text_area :body %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :time %><br />
-    <%= f.datetime_select :time %>
-  </div> -->
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit "SEND", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                messages_path, :class => 'btn' %>
   </div>
 <% end %>
