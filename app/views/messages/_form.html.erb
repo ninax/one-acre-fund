@@ -1,11 +1,17 @@
-<%= form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
   <!-- <div class="control-group">
     <%= f.label :sender, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :sender, :class => 'text_field' %>
     </div>
   </div> -->
-  <div class="control-group">
+  <%= f.input :recipient, :label => 'Recipient(s)', :input_html => { :style => "width:420px; height:250px" }, :placeholder => "Copy and paste phone numbers here" %>
+  <div id="bodyTextArea">
+    <%= f.input :body, :input_html => { :style => "width:420px; height:100px;" }, :placeholder => "Type your message here" %>
+    <p class="controls note">(140 characters maximum)</p>
+  </div>
+  <!-- <div class="control-group">
     <%= f.label :recipient, "Recipient(s)", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :recipient, :style => "width:420px; height:250px", :placeholder => "Copy and paste phone numbers here", :class => 'text_area' %>
@@ -19,7 +25,7 @@
 	  <p class="note">(140 characters maximum)</p>
 	</div>
     </div>
-  </div>
+  </div> -->
   <!-- <div class="control-group">
     <%= f.label :time, :class => 'control-label' %>
     <div class="controls">
