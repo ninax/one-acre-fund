@@ -1,5 +1,6 @@
 class Message < ActiveRecord::Base
   attr_accessible :body, :recipient, :sender, :time
+  self.primary_key = "ID"
   
   #Validations
   validates :recipient, :body, :presence => true
