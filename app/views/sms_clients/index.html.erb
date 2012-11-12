@@ -6,26 +6,26 @@
   <thead>
     <tr>
       <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
-      <th><%= model_class.human_attribute_name(:ClientName) %></th>
+      <th>Client Name</th>
       <!-- <th><%= model_class.human_attribute_name(:NationalID) %></th>
       <th><%= model_class.human_attribute_name(:SeasonName) %></th>
       <th><%= model_class.human_attribute_name(:EnrollmentDate) %></th>
       <th><%= model_class.human_attribute_name(:Dropped) %></th>
       <th><%= model_class.human_attribute_name(:DroppedDate) %></th>
       <th><%= model_class.human_attribute_name(:Facilitator) %></th>
-      <th><%= model_class.human_attribute_name(:SeasonDataEntryDate) %></th> -->
+      <th><%= model_class.human_attribute_name(:SeasonDataEntryDate) %></th>
       <th><%= model_class.human_attribute_name(:SeasonID) %></th>
-      <!-- <th><%= model_class.human_attribute_name(:Deceased) %></th>
+      <th><%= model_class.human_attribute_name(:Deceased) %></th>
       <th><%= model_class.human_attribute_name(:GroupName) %></th>
       <th><%= model_class.human_attribute_name(:SiteName) %></th>
       <th><%= model_class.human_attribute_name(:SectorName) %></th>
       <th><%= model_class.human_attribute_name(:DistrictName) %></th>
       <th><%= model_class.human_attribute_name(:GovDistrictName) %></th> -->
-      <th><%= model_class.human_attribute_name(:ClientID) %></th>
-      <th><%= model_class.human_attribute_name(:GroupID) %></th>
-      <th><%= model_class.human_attribute_name(:SiteID) %></th>
-      <th><%= model_class.human_attribute_name(:SectorID) %></th>
-      <th><%= model_class.human_attribute_name(:DistrictID) %></th>
+      <th>Client ID</th>
+      <th>Group ID</th>
+      <th>Site ID</th>
+      <!-- <th><%= model_class.human_attribute_name(:SectorID) %></th> -->
+      <th>District ID</th>
       <!-- <th><%= model_class.human_attribute_name(:GovDistrictID) %></th>
       <th><%= model_class.human_attribute_name(:FieldOfficer) %></th>
       <th><%= model_class.human_attribute_name(:FieldManager) %></th>
@@ -38,8 +38,8 @@
       <th><%= model_class.human_attribute_name(:GroupActive) %></th>
       <th><%= model_class.human_attribute_name(:SiteActive) %></th>
       <th><%= model_class.human_attribute_name(:FirstSeason) %></th> -->
-      <th><%= model_class.human_attribute_name(:TotalCredit) %></th>
-      <th><%= model_class.human_attribute_name(:RepaymentTotal) %></th>
+      <th>Total Credit</th>
+      <th>Repayment Total</th>
       <!-- <th><%= model_class.human_attribute_name(:Service) %></th>
       <th><%= model_class.human_attribute_name(:Delivery) %></th>
       <th><%= model_class.human_attribute_name(:DebtForgive) %></th>
@@ -55,7 +55,7 @@
       <th><%= model_class.human_attribute_name(:SeasonClientID) %></th>
       <th><%= model_class.human_attribute_name(:LastRepayment) %></th>
       <th><%= model_class.human_attribute_name(:ExtendedClientID) %></th> -->
-      <th><%= model_class.human_attribute_name(:ClientPhoneNumber) %></th>
+      <th>Phone Number</th>
     </tr>
   </thead>
   <tbody>
@@ -69,9 +69,9 @@
         <td><%= sms_client.Dropped %></td>
         <td><%= sms_client.DroppedDate %></td>
         <td><%= sms_client.Facilitator %></td>
-        <td><%= sms_client.SeasonDataEntryDate %></td> -->
+        <td><%= sms_client.SeasonDataEntryDate %></td>
         <td><%= sms_client.SeasonID %></td>
-        <!-- <td><%= sms_client.Deceased %></td>
+        <td><%= sms_client.Deceased %></td>
         <td><%= sms_client.GroupName %></td>
         <td><%= sms_client.SiteName %></td>
         <td><%= sms_client.SectorName %></td>
@@ -80,7 +80,7 @@
         <td><%= sms_client.ClientID %></td>
         <td><%= sms_client.GroupID %></td>
         <td><%= sms_client.SiteID %></td>
-        <td><%= sms_client.SectorID %></td>
+        <!-- <td><%= sms_client.SectorID %></td> -->
         <td><%= sms_client.DistrictID %></td>
         <!-- <td><%= sms_client.GovDistrictID %></td>
         <td><%= sms_client.FieldOfficer %></td>
