@@ -1,0 +1,119 @@
+<%- model_class = SmsClient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:ClientName) %>:</strong></dt>
+  <dd><%= @sms_client.ClientName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:NationalID) %>:</strong></dt>
+  <dd><%= @sms_client.NationalID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SeasonName) %>:</strong></dt>
+  <dd><%= @sms_client.SeasonName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:EnrollmentDate) %>:</strong></dt>
+  <dd><%= @sms_client.EnrollmentDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Dropped) %>:</strong></dt>
+  <dd><%= @sms_client.Dropped %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DroppedDate) %>:</strong></dt>
+  <dd><%= @sms_client.DroppedDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Facilitator) %>:</strong></dt>
+  <dd><%= @sms_client.Facilitator %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SeasonDataEntryDate) %>:</strong></dt>
+  <dd><%= @sms_client.SeasonDataEntryDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SeasonID) %>:</strong></dt>
+  <dd><%= @sms_client.SeasonID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Deceased) %>:</strong></dt>
+  <dd><%= @sms_client.Deceased %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GroupName) %>:</strong></dt>
+  <dd><%= @sms_client.GroupName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SiteName) %>:</strong></dt>
+  <dd><%= @sms_client.SiteName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SectorName) %>:</strong></dt>
+  <dd><%= @sms_client.SectorName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DistrictName) %>:</strong></dt>
+  <dd><%= @sms_client.DistrictName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GovDistrictName) %>:</strong></dt>
+  <dd><%= @sms_client.GovDistrictName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ClientID) %>:</strong></dt>
+  <dd><%= @sms_client.ClientID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GroupID) %>:</strong></dt>
+  <dd><%= @sms_client.GroupID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SiteID) %>:</strong></dt>
+  <dd><%= @sms_client.SiteID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SectorID) %>:</strong></dt>
+  <dd><%= @sms_client.SectorID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DistrictID) %>:</strong></dt>
+  <dd><%= @sms_client.DistrictID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GovDistrictID) %>:</strong></dt>
+  <dd><%= @sms_client.GovDistrictID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FieldOfficer) %>:</strong></dt>
+  <dd><%= @sms_client.FieldOfficer %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FieldManager) %>:</strong></dt>
+  <dd><%= @sms_client.FieldManager %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FOID) %>:</strong></dt>
+  <dd><%= @sms_client.FOID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FMID) %>:</strong></dt>
+  <dd><%= @sms_client.FMID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GroupFirstSeason) %>:</strong></dt>
+  <dd><%= @sms_client.GroupFirstSeason %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SiteFirstSeason) %>:</strong></dt>
+  <dd><%= @sms_client.SiteFirstSeason %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:StockID) %>:</strong></dt>
+  <dd><%= @sms_client.StockID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:LandWaterHarvest) %>:</strong></dt>
+  <dd><%= @sms_client.LandWaterHarvest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:GroupActive) %>:</strong></dt>
+  <dd><%= @sms_client.GroupActive %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SiteActive) %>:</strong></dt>
+  <dd><%= @sms_client.SiteActive %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FirstSeason) %>:</strong></dt>
+  <dd><%= @sms_client.FirstSeason %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:TotalCredit) %>:</strong></dt>
+  <dd><%= @sms_client.TotalCredit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:RepaymentTotal) %>:</strong></dt>
+  <dd><%= @sms_client.RepaymentTotal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Service) %>:</strong></dt>
+  <dd><%= @sms_client.Service %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Delivery) %>:</strong></dt>
+  <dd><%= @sms_client.Delivery %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DebtForgive) %>:</strong></dt>
+  <dd><%= @sms_client.DebtForgive %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:InputCredit) %>:</strong></dt>
+  <dd><%= @sms_client.InputCredit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ChangeFee) %>:</strong></dt>
+  <dd><%= @sms_client.ChangeFee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Enrollment) %>:</strong></dt>
+  <dd><%= @sms_client.Enrollment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:TrainingFee) %>:</strong></dt>
+  <dd><%= @sms_client.TrainingFee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:FuneralAsstFee) %>:</strong></dt>
+  <dd><%= @sms_client.FuneralAsstFee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:NewClientFee) %>:</strong></dt>
+  <dd><%= @sms_client.NewClientFee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DeferredCredit) %>:</strong></dt>
+  <dd><%= @sms_client.DeferredCredit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:CreditAdjustment) %>:</strong></dt>
+  <dd><%= @sms_client.CreditAdjustment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:PreviousDeferredCredit) %>:</strong></dt>
+  <dd><%= @sms_client.PreviousDeferredCredit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SeasonClientID) %>:</strong></dt>
+  <dd><%= @sms_client.SeasonClientID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:LastRepayment) %>:</strong></dt>
+  <dd><%= @sms_client.LastRepayment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ExtendedClientID) %>:</strong></dt>
+  <dd><%= @sms_client.ExtendedClientID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ClientPhoneNumber) %>:</strong></dt>
+  <dd><%= @sms_client.ClientPhoneNumber %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              sms_clients_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_sms_client_path(@sms_client), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              sms_client_path(@sms_client),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,103 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ClientName: MyString
+  NationalID: MyString
+  SeasonName: MyString
+  EnrollmentDate: 2012-11-11 17:38:41
+  Dropped: 
+  DroppedDate: 2012-11-11 17:38:41
+  Facilitator: 
+  SeasonDataEntryDate: 2012-11-11 17:38:41
+  SeasonID: 1
+  Deceased: 
+  GroupName: MyString
+  SiteName: MyString
+  SectorName: MyString
+  DistrictName: MyString
+  GovDistrictName: MyString
+  ClientID: 1
+  GroupID: 1
+  SiteID: 1
+  SectorID: 1
+  DistrictID: 1
+  GovDistrictID: 1
+  FieldOfficer: MyString
+  FieldManager: MyString
+  FOID: 1
+  FMID: 1
+  GroupFirstSeason: 1
+  SiteFirstSeason: 1
+  StockID: 1
+  LandWaterHarvest: 
+  GroupActive: 
+  SiteActive: 
+  FirstSeason: 1
+  TotalCredit: 1.5
+  RepaymentTotal: 1.5
+  Service: 1.5
+  Delivery: 1.5
+  DebtForgive: 1.5
+  InputCredit: 1.5
+  ChangeFee: 1.5
+  Enrollment: 1
+  TrainingFee: 1.5
+  FuneralAsstFee: 1.5
+  NewClientFee: 1.5
+  DeferredCredit: 1.5
+  CreditAdjustment: 1.5
+  PreviousDeferredCredit: 1.5
+  SeasonClientID: 1
+  LastRepayment: 2012-11-11 17:38:41
+  ClientPhoneNumber: MyString
+
+two:
+  ClientName: MyString
+  NationalID: MyString
+  SeasonName: MyString
+  EnrollmentDate: 2012-11-11 17:38:41
+  Dropped: 
+  DroppedDate: 2012-11-11 17:38:41
+  Facilitator: 
+  SeasonDataEntryDate: 2012-11-11 17:38:41
+  SeasonID: 1
+  Deceased: 
+  GroupName: MyString
+  SiteName: MyString
+  SectorName: MyString
+  DistrictName: MyString
+  GovDistrictName: MyString
+  ClientID: 1
+  GroupID: 1
+  SiteID: 1
+  SectorID: 1
+  DistrictID: 1
+  GovDistrictID: 1
+  FieldOfficer: MyString
+  FieldManager: MyString
+  FOID: 1
+  FMID: 1
+  GroupFirstSeason: 1
+  SiteFirstSeason: 1
+  StockID: 1
+  LandWaterHarvest: 
+  GroupActive: 
+  SiteActive: 
+  FirstSeason: 1
+  TotalCredit: 1.5
+  RepaymentTotal: 1.5
+  Service: 1.5
+  Delivery: 1.5
+  DebtForgive: 1.5
+  InputCredit: 1.5
+  ChangeFee: 1.5
+  Enrollment: 1
+  TrainingFee: 1.5
+  FuneralAsstFee: 1.5
+  NewClientFee: 1.5
+  DeferredCredit: 1.5
+  CreditAdjustment: 1.5
+  PreviousDeferredCredit: 1.5
+  SeasonClientID: 1
+  LastRepayment: 2012-11-11 17:38:41
+  ClientPhoneNumber: MyString
