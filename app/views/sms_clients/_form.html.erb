@@ -20,7 +20,7 @@
     <%= f.input_field :lRepaymentRate %>
   <% end %>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= f.submit "Get Phone Numbers", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 sms_clients_path, :class => 'btn' %>
   </div>

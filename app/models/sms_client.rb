@@ -5,7 +5,8 @@ class SmsClient < ActiveRecord::Base
 
   def self.by_district(district)
     if district.present?
-      where(:DistrictID => district)
+      array = district.split(',').map { |n| n.to_i }
+      where(:DistrictID => array)
     else 
       where('1=1')
     end
@@ -13,7 +14,8 @@ class SmsClient < ActiveRecord::Base
   
   def self.by_site(site)
     if site.present?
-      where(:SiteID => site)
+      array = site.split(',').map { |n| n.to_i }
+      where(:SiteID => array)
     else 
       where('1=1')
     end
@@ -21,7 +23,8 @@ class SmsClient < ActiveRecord::Base
   
   def self.by_group(group)
     if group.present?
-      where(:GroupID => group)
+      array = group.split(',').map { |n| n.to_i }
+      where(:GroupID => array)
     else 
       where('1=1')
     end
