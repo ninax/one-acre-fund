@@ -1,54 +1,24 @@
 <%= simple_form_for @sms_client, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :ClientName %>
-  <%= f.input :NationalID %>
-  <%= f.input :SeasonName %>
-  <%= f.input :EnrollmentDate %>
-  <%= f.input :Dropped %>
-  <%= f.input :DroppedDate %>
-  <%= f.input :Facilitator %>
-  <%= f.input :SeasonDataEntryDate %>
-  <%= f.input :SeasonID %>
-  <%= f.input :Deceased %>
-  <%= f.input :GroupName %>
-  <%= f.input :SiteName %>
-  <%= f.input :SectorName %>
-  <%= f.input :DistrictName %>
-  <%= f.input :GovDistrictName %>
-  <%= f.input :ClientID %>
-  <%= f.input :GroupID %>
-  <%= f.input :SiteID %>
-  <%= f.input :SectorID %>
-  <%= f.input :DistrictID %>
-  <%= f.input :GovDistrictID %>
-  <%= f.input :FieldOfficer %>
-  <%= f.input :FieldManager %>
-  <%= f.input :FOID %>
-  <%= f.input :FMID %>
-  <%= f.input :GroupFirstSeason %>
-  <%= f.input :SiteFirstSeason %>
-  <%= f.input :StockID %>
-  <%= f.input :LandWaterHarvest %>
-  <%= f.input :GroupActive %>
-  <%= f.input :SiteActive %>
-  <%= f.input :FirstSeason %>
-  <%= f.input :TotalCredit %>
-  <%= f.input :RepaymentTotal %>
-  <%= f.input :Service %>
-  <%= f.input :Delivery %>
-  <%= f.input :DebtForgive %>
-  <%= f.input :InputCredit %>
-  <%= f.input :ChangeFee %>
-  <%= f.input :Enrollment %>
-  <%= f.input :TrainingFee %>
-  <%= f.input :FuneralAsstFee %>
-  <%= f.input :NewClientFee %>
-  <%= f.input :DeferredCredit %>
-  <%= f.input :CreditAdjustment %>
-  <%= f.input :PreviousDeferredCredit %>
-  <%= f.input :SeasonClientID %>
-  <%= f.input :LastRepayment %>
-  <%= f.input :ExtendedClientID %>
-  <%= f.input :ClientPhoneNumber %>
+  <%= f.input :district %>  
+  <%= f.input :site %>
+  <%= f.input :group %>
+  <!-- <%= f.input :gRepaymentAmount, :label => 'Repayment Amount' %> -->
+  <%= f.input :gRepaymentAmount, :wrapper => :prepend, :label => 'Repayment Amount' do %>
+    <%= content_tag :span, ">", :class => "add-on" %>
+    <%= f.input_field :gRepaymentAmount %>
+  <% end %>
+  <%= f.input :lRepaymentAmount, :wrapper => :prepend, :label => 'Repayment Amount' do %>
+    <%= content_tag :span, "<", :class => "add-on" %>
+    <%= f.input_field :lRepaymentAmount %>
+  <% end %>
+  <%= f.input :gRepaymentRate, :wrapper => :prepend, :label => 'Repayment Rate' do %>
+    <%= content_tag :span, ">", :class => "add-on" %>
+    <%= f.input_field :gRepaymentRate %>
+  <% end %>
+  <%= f.input :lRepaymentRate, :wrapper => :prepend, :label => 'Repayment Rate' do %>
+    <%= content_tag :span, "<", :class => "add-on" %>
+    <%= f.input_field :lRepaymentRate %>
+  <% end %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

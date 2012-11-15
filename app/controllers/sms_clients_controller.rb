@@ -14,9 +14,23 @@ class SmsClientsController < ApplicationController
   # GET /sms_clients/1.json
   def show
     @sms_client = SmsClient.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
+      format.json { render json: @sms_client }
+    end
+  end
+  
+  def list
+    @sms_client = SmsClient.find(params[:id])
+
+    unless session[:sms_client_ids].nil?
+      @clients = session[:sms_client_ids].map{|s| SmsClient.find(s)}
+      session[:sms_client_ids] = nil
+    end
+    
+    respond_to do |format|
+      format.html # list.html.erb
       format.json { render json: @sms_client }
     end
   end
@@ -40,15 +54,15 @@ class SmsClientsController < ApplicationController
   # POST /sms_clients
   # POST /sms_clients.json
   def create
-    @sms_client = SmsClient.new(params[:sms_client])
-
+    @clients = SmsClient.by_district(params[:sms_client][:district]).by_site(params[:sms_client][:site]).by_group(params[:sms_client][:group]).greaterthan_amount(params[:sms_client][:gRepaymentAmount]).lessthan_amount(params[:sms_client][:lRepaymentAmount]).greaterthan_rate(params[:sms_client][:gRepaymentRate]).lessthan_rate(params[:sms_client][:lRepaymentRate])
+    session[:sms_client_ids] = @clients.map(&:id)
     respond_to do |format|
-      if @sms_client.save
-        format.html { redirect_to @sms_client, notice: 'Sms client was successfully created.' }
-        format.json { render json: @sms_client, status: :created, location: @sms_client }
+      if @clients.present?
+        format.html { redirect_to list_sms_client_path(@clients.first), notice: "Copy and paste the phone number(s) below into the text area for 'Recipient(s)' on the  #{view_context.link_to('Send a Message', new_message_path)} page.".html_safe }
+        format.json { render json: @clients, status: :created, location: @clients }
       else
         format.html { render action: "new" }
-        format.json { render json: @sms_client.errors, status: :unprocessable_entity }
+        format.json { render json: @clients.errors, status: :unprocessable_entity }
       end
     end
   end

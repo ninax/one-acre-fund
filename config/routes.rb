@@ -54,6 +54,8 @@ OneAcreFund::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'messages#index'
   match '/receive' => 'messages#receive', :via => :post
+  
+  match 'sms_clients/list/:id' => 'sms_clients#list', :as => :list_sms_client
 
   # See how all your routes lay out with "rake routes"
 

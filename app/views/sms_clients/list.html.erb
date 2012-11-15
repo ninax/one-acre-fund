@@ -1,0 +1,8 @@
+<h2>Query Results</h2>
+<% if @clients.blank? %>
+    <p>No Clients</p>
+<% else %>
+	<% @clients.each do |c| %>
+	  <div><%= c.ClientPhoneNumber %></div>
+	<% end %>
+<% end %>
